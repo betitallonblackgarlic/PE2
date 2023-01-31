@@ -4,7 +4,22 @@
 // Example function for the beginning tests
 // Really, it shouldn't be in a Circle header file but we
 // wanted you to get started
-unsigned int Factorial(unsigned int number);
+unsigned int Factorial(unsigned int number) {
+  unsigned int prev = 1;
+  unsigned int next = 1;
+
+  if (!number)
+  {
+    return 1;
+  }
+
+  for (unsigned int i = 1 ; i <= number ; i++) {
+    next = prev * i;
+    prev = next;
+  }
+
+  return next;
+}
 
 struct Point {
   int x;
