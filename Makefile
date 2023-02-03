@@ -6,7 +6,7 @@ CXXGDB = -ggdb
 all: test
 
 clean:
-	rm test #Circle.o (because you can't recompile this one!)
+	rm test Circle.o
 
 test: Circle.o test.cpp
 	$(CXX) $(CXXFLAGS) test.cpp Circle.o -o test
@@ -16,3 +16,6 @@ main: Circle.o main.cpp
 
 Circle.o: Circle.cpp
 	$(CXX) $(CXXFLAGS) -c Circle.cpp
+
+run:
+	./test

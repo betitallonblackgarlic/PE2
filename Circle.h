@@ -1,25 +1,12 @@
 #ifndef _CIRCLE_H_
 #define _CIRCLE_H_
 
+#include <math.h>
+
 // Example function for the beginning tests
 // Really, it shouldn't be in a Circle header file but we
 // wanted you to get started
-unsigned int Factorial(unsigned int number) {
-  unsigned int prev = 1;
-  unsigned int next = 1;
-
-  if (!number)
-  {
-    return 1;
-  }
-
-  for (unsigned int i = 1 ; i <= number ; i++) {
-    next = prev * i;
-    prev = next;
-  }
-
-  return next;
-}
+unsigned int Factorial(unsigned int number);
 
 struct Point {
   int x;
@@ -33,7 +20,7 @@ class Circle {
   Circle(Point p, int rad);
 
   // returns the radius of the circle
-  int get_radius() const { return radius_; };
+  int get_radius() const { return radius_; }
 
   // returns the center of the circle
   Point get_center() const { return center_; }
@@ -48,6 +35,8 @@ class Circle {
   void Expand();
 
   // decreases the radius by one
+
+  // Shrink allows radius < 0
   void Shrink();
 
  private:
